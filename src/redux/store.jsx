@@ -1,6 +1,6 @@
 import { legacy_createStore } from "redux";
-import CounterReducer from "./counter/CounterReducer";
+import rootReducer from "./rootReducer";
 
-const store = legacy_createStore(CounterReducer);
+const store = legacy_createStore(rootReducer);
 
 export default store;

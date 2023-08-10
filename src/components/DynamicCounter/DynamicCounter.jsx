@@ -1,20 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, reset } from "../../redux/counter/ActionCreators";
+import { ddecrement, dincrement, dreset } from "../../redux/dynamicCounter/ActionCreators";
 
-const Counter = () => {
-    const count = useSelector((state) => state.counterReducer.count);
+const DynamicCounter = () => {
+    const count = useSelector((state) => state.dynamicCounterReducer.count);
     const dispatch = useDispatch();
 
     const handleIncrement = () => {
-        dispatch(increment());
+        return dispatch(dincrement(5));
     };
-
     const handleDecrement = () => {
-        dispatch(decrement());
+        return dispatch(ddecrement(5));
     };
-
     const handleReset = () => {
-        dispatch(reset());
+        return dispatch(dreset());
     };
 
     return (
@@ -24,10 +22,9 @@ const Counter = () => {
                 <button onClick={handleIncrement} className="text-xl bg-blue-400 mx-5 my-3 px-5 py-3 text-white rounded hover:bg-blue-600 shadow-lg">Increment</button>
                 <button onClick={handleDecrement} className="text-xl bg-blue-400 mx-5 my-3 px-5 py-3 text-white rounded hover:bg-blue-600 shadow-lg">Decrement</button>
                 <button onClick={handleReset} className="text-xl bg-blue-400 mx-5 my-3 px-5 py-3 text-white rounded hover:bg-blue-600 shadow-lg">Reset</button>
-
             </div>
         </div>
     );
 };
 
-export default Counter;
+export default DynamicCounter;

@@ -1,4 +1,5 @@
 import Counter from "./components/Counter/Counter"
+import DynamicCounter from "./components/DynamicCounter/DynamicCounter"
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
           <Counter />
           {/* Dynamic Counter  */}
           <h3 className="text-center text-xl text-white font-bold mt-16">Dynamic Counter</h3>
-          <Counter />
+          <DynamicCounter />
         </div>
       </div>
     </div>
